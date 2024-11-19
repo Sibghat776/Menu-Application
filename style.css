@@ -7,16 +7,22 @@
 }
 :root {
     --font-family: "Red Rose", serif;
+    --dark-Color: #728156 ;
+    --color: #e7f5dc;
 }
-
+body {
+    overflow-x: hidden;
+}
 .main {
     width: 100vw;
     display: flex;
-    justify-content: center;
+    height: 200vh;
     align-items: center;
+    padding-top: 60px;
     flex-direction: column;
-    padding: 6% 8%;
     font-family: var(--font-family);
+    background-color: var(--dark-Color);
+    color: var(--color);
 }
 .btns {
     display: flex;
@@ -24,10 +30,40 @@
     align-items: center;
     gap: 28px;
     padding: 40px;
+    border-bottom: 2px solid #e7f5dc;
 }
 .button {
     padding: 10px 30px;
     background-color: transparent;
+    border: 2px solid white;
+    color: var(--Color);
+    font-weight: bolder;
+    font-size: 1.1vw;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.button:hover {
+    background-color: var(--color);
+    color: #728156;
     border: 2px solid black;
-    color: ;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+.card {
+    height: 50vh;
+    width: 42vw;
+    border: 2px solid black;
+    display: flex;
+    margin: 20px;
+}
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
 }
