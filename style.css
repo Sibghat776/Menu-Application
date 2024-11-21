@@ -12,11 +12,11 @@
 }
 body {
     overflow-x: hidden;
+    position: relative;
 }
 .main {
     width: 100vw;
     display: flex;
-    height: 200vh;
     align-items: center;
     padding-top: 60px;
     flex-direction: column;
@@ -57,13 +57,85 @@ body {
 .card {
     height: 50vh;
     width: 42vw;
-    border: 2px solid black;
     display: flex;
     margin: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+#image {
+    border: 5px solid #e7f5dc;
+    border-radius: 5px;
 }
 .details {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 20px;
+    gap: 20px;
+}
+.details > h2 > span {
+    color: #e7f5dc;
+    font-size: 1rem;
+}
+.details > h2 {
+    font-size: 1.4rem;
+}
+.adding {
+    transition: all 1s ease-in-out;
+    position: absolute;
+    height: 80vh;
+    top: 5%;
+    background-color: white;
+    width: 28vw;
+    right: 37%;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 20px;
+}
+.addingPage {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.inputs > input {
+    padding: 6px;
+    width: 80%;
+}
+.addDish {
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.4s ease-out;
+}
+.addDish:hover {
+    border: 2px solid #728156;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+}
+.close {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.2rem;
+    border: none;
+    font-weight: 600;
+    background-color: red;
+    border-radius: 3px;
+    color: white;
+    padding: 4px 8px;
 }
