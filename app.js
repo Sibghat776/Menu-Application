@@ -187,19 +187,52 @@ function addGayabHoja() {
     document.querySelector(".adding").style.display = 'none'
 }
 
+// function addingDish() {
+//     console.log("Chala")
+//     let dishName = document.querySelector("#dishName").value
+//     let dishPrice = document.querySelector("#dishPrice").value
+//     let dishDesc = document.querySelector("#dishDesc").value
+//     let dishType = document.querySelector("#dishType").value
+//     let dishImage = document.querySelector("#file")
+//     khana.push({
+//         name: dishName,
+//         price: dishPrice,
+//         description: dishDesc,
+//         type: dishType,
+//         image: dishImage,
+//     })
+//     document.querySelector(".adding").classList.remove("adding")
+//     document.querySelector(".addingPage").style.display = "none"
+// }
 function addingDish() {
-    console.log("Chala")
-    let dishName = document.querySelector("#dishName").value
-    let dishPrice = document.querySelector("#dishPrice").value
-    let dishDesc = document.querySelector("#dishDesc").value
-    let dishType = document.querySelector("#dishType").value
-    let dishImage = document.querySelector("#file").
-    document.querySelector(".adding").style.display = 'none'
-    khana.push({
-        name: dishName,
-        price: dishPrice,
-        description: dishDesc,
-        type: dishType,
-        image: dishImage,
-    })
+    console.log("Adding Dish Function Called");
+
+    let dishName = document.querySelector("#dishName").value;
+    let dishPrice = document.querySelector("#dishPrice").value;
+    let dishDesc = document.querySelector("#dishDesc").value;
+    let dishType = document.querySelector("#dishType").value;
+    let dishImage = document.querySelector("#file").files[0];
+
+    // Check if all fields are filled
+    if (dishName && dishPrice && dishDesc && dishType && dishImage) {
+        // Convert the image file to a URL
+        let imageURL = URL.createObjectURL(dishImage);
+
+        // Add the new dish to the menu
+        khana.push({
+            name: dishName,
+            price: dishPrice,
+            description: dishDesc,
+            type: dishType,
+            image: imageURL,
+        });
+
+        // Reset the form
+        document.querySelector(".adding").remove();
+
+        // Refresh the menu to include the new dish
+        sabAajao();
+    } else {
+        alert("Please fill all fields and upload an image.");
+    }
 }

@@ -139,3 +139,41 @@ body {
     color: white;
     padding: 4px 8px;
 }
+
+@media (max-width: 768px) {
+    .btns {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .card {
+        width: 90%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #image {
+        width: 100%;
+        height: auto;
+    }
+
+    .details {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .button {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+    }
+
+    .head h1 {
+        font-size: 1.5rem;
+    }
+}
