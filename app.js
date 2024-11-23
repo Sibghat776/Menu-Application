@@ -64,6 +64,9 @@ let khana = [
         image: `./Images/Chai Paratha.jpeg`
     },
 ]
+
+
+
 let HTMLCard = document.querySelector(".cards")
 khana.forEach(function (item) {
     let card = document.createElement("div")
@@ -76,8 +79,6 @@ khana.forEach(function (item) {
                     </div>
                 </div>`
 })
-
-
 
 function breakFast() {
     console.log("Chal Raha HUn")
@@ -97,6 +98,7 @@ function breakFast() {
 
     })
 }
+
 function lunch() {
     console.log("Chal Raha HUn")
     HTMLCard.innerHTML = ''
@@ -115,6 +117,7 @@ function lunch() {
 
     })
 }
+
 function juice() {
     console.log("Chal Raha HUn")
     HTMLCard.innerHTML = ''
@@ -133,6 +136,7 @@ function juice() {
 
     })
 }
+
 function sabAajao() {
     console.log("Chal Raha HUn")
     HTMLCard.innerHTML = ''
@@ -153,64 +157,49 @@ function sabAajao() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function add() {
     console.log('Function Chala');
     let loginPage = document.createElement("div")
     document.body.appendChild(loginPage)
-    loginPage.classList.toggle("adding")
+    loginPage.classList.add("adding")
     loginPage.innerHTML = `<div class="addingPage">
         <div class="head">
             <h1>Add Your Dish</h1>
         </div>
         <div class="inputs">
-            <input placeholder="Dish Name here" type="text">
-            <input placeholder="Dish Price here" type="text">
-            <input placeholder="Dish description" type="text">
-            <input placeholder="Dish Type here" type="text">
+            <input placeholder="Dish Name here" id="dishName" type="text">
+            <input placeholder="Dish Price here" id="dishPrice" type="text">
+            <input placeholder="Dish description" id="dishDesc" type="text">
+            <input placeholder="Dish Type here" id="dishType" type="text">
             Choose A Picture : 
                 <input type="file" name="Choose A Picture" id="file">
         </div>
         <div class="mybtn">
-            <button class="addDish">Add My Dish</button>
+            <button class="addDish" onclick="addingDish()">Add My Dish</button>
         </div>
             <button class="close" onclick="addGayabHoja()">X</button>
-    </div>`    
+    </div>`
 }
 
 function addGayabHoja() {
     console.log("Chala")
-    document.querySelector(".adding").style.display  = "none"
+    document.querySelector(".adding").innerHTML = ''
+    document.querySelector(".adding").style.display = 'none'
+}
+
+function addingDish() {
+    console.log("Chala")
+    let dishName = document.querySelector("#dishName").value
+    let dishPrice = document.querySelector("#dishPrice").value
+    let dishDesc = document.querySelector("#dishDesc").value
+    let dishType = document.querySelector("#dishType").value
+    let dishImage = document.querySelector("#file").
+    document.querySelector(".adding").style.display = 'none'
+    khana.push({
+        name: dishName,
+        price: dishPrice,
+        description: dishDesc,
+        type: dishType,
+        image: dishImage,
+    })
 }
